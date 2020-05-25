@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'MagicDreams';
+    src: url('fonts/Magic_dreams/MagicDreams.woff2') format('woff2'),
+         url('fonts/Magic_dreams/MagicDreams.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.titolo {
+  font-family: MagicDreams;
+  color: white;
+}
+
+.imgprofile{
+  height: 60px !important;
+}
+
+
+
+#9370DB
+#7B68EE
+#48D1CC
