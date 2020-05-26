@@ -29,6 +29,40 @@ class db_candidato{
 		$conn->close();
 	}
 
+	//UPDATE QUERIES
+	public function updateMail($oldMail, $newMail){
+		$conn = $this->getConnection();
+		$sql = "UPDATE candidato SET mail = '".$newMail."' WHERE mail LIKE '".$oldMail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateID($mail, $newID){
+		$conn = $this->getConnection();
+		$sql = "UPDATE candidato SET ID = '".$newID."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateAccettato($mail, $newAccettato){
+		$conn = $this->getConnection();
+		$sql = "UPDATE candidato SET Accettato = '".$newAccettato."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateCurriculum($mail, $newCurriculum){
+		$conn = $this->getConnection();
+		$sql = "UPDATE candidato SET Curriculum = '".$newCurriculum."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+	//END UPDATE QUERIES
+
 	public function setCandidato($mail, $id){
 		$conn = $this->getConnection();
 		$sql = "SELECT * FROM candidato WHERE mailutente LIKE \'".$mail."\' AND progettoid = ".$id;

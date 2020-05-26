@@ -29,6 +29,80 @@ class db_progetto{
 		$conn->close();
 	}
 
+	//UPDATE QUERIES
+	public function updateID($oldID, $newID){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET ID = '".$newID."' WHERE ID LIKE '".$oldID."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateLeader($mail, $newLeader){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET Leader = '".$newLeader."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateNome($mail, $newNome){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET nome = '".$newNome."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateDescrizione($mail, $newDescrizione){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET Descrizione = '".$newDescrizione."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateData_scadenza($mail, $newData_scadenza){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET Data_scadenza = '".$newData_scadenza."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateData_creazione($mail, $newData_creazione){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET Data_creazione = '".$newData_creazione."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updateds
+		}
+	}
+
+	public function updateCandidatura($mail, $newCandidatura){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET Candidatura = '".$newCandidatura."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateNumero_candidati($mail, $newNumero_candidati){
+		$conn = $this->getConnection();
+		$sql = "UPDATE progetto SET Numero_candidati = '".$newNumero_candidati."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateRicercabile($mail, $newRicercabile){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET Ricercabile = '".$newRicercabile."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+	//END UPDATE QUERIES
+
 
 	public function setProgetto($id){
 		$conn = $this->getConnection();

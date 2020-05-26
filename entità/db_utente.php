@@ -29,6 +29,74 @@ class db_utente{
 		$conn->close();
 	}
 
+	//UPDATE QUERIES
+	public function updateMail($oldMail, $newMail){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET mail = '".$newMail."' WHERE mail LIKE '".$oldMail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updatePassword($mail, $newPassword){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET password = '".$newPassword."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateNome($mail, $newNome){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET nome = '".$newNome."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateCognome($mail, $newCognome){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET cognome = '".$newCognome."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateDescrizione($mail, $newDescrizione){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET descrizione = '".$newDescrizione."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateNascita($mail, $newNascita){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET nascita = '".$newNascita."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateImmagine($mail, $newImmagine){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET immagine = '".$newImmagine."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+
+	public function updateCurriculum($mail, $newCurriculum){
+		$conn = $this->getConnection();
+		$sql = "UPDATE utente SET curriculum = '".$newCurriculum."' WHERE mail LIKE '".$mail."'";
+		if($conn->query($sql) === TRUE){
+			//successfully updated
+		}
+	}
+	//END UPDATE QUERIES
+
+
+
 	public function setUtente($mail){
 		$conn = $this->getConnection();
 		$sql = "SELECT * FROM utente WHERE mail LIKE '".$mail."'";
