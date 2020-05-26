@@ -11,7 +11,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-
+	<script type="text/javascript">
+		function controllo(){
+			
+			
+			var password = document.getElementById("password").value;
+			var conferma = document.getElementById("confermaPassword").value;
+			if(password == conferma)
+				return true;
+			else{
+				document.getElementById("confermaPassword").classList.add("is-invalid");
+				document.getElementById("confermaPassword").popover();
+				return false;
+			}
+		}
+	</script>
 </head>
 
 <body style="background-color: #9BA4AF;">
@@ -30,7 +44,7 @@
 	<br>
 
 	<center>
-		<form style="color: white;">
+		<form style="color: white;" onsubmit="return controllo();" action="Registrazione.php" method="POST">
 			<div class="form-group">
 				<table style="background-color: #343a40;">
 
@@ -52,12 +66,12 @@
 						<td width="10rem"></td>
 						<td>
 							<label for="nome">Nome</label>
-							<input type="text" class="form-control" id="nome" placeholder="Nome">
+							<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" pattern="[a-zA-Z]{2,40}" >
 						</td>
 						<td width="10rem"></td>
 						<td>
 							<label for="cognome">Cognome</label>
-							<input type="rext" class="form-control" id="cognome" placeholder="Cognome">
+							<input type="text" class="form-control" id="cognome" name="cognome" placeholder="Cognome" pattern="[a-zA-Z]{2,50}">
 						</td>
 						<td width="10rem"></td>
 					</tr>
@@ -69,7 +83,7 @@
 						<td colspan="3">
 							<div class="container-fluid">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">								
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email">								
 							</div>
 
 						</td>
@@ -86,12 +100,12 @@
 						<td width="10rem"></td>
 						<td>
 							<label for="password">Password</label>
-							<input type="password" class="form-control" id="password" placeholder="Password">
+							<input type="password" class="form-control" id="password" name="password" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,32}$">
 						</td>
 						<td width="10rem"></td>
 						<td>
-							<label for="cognome">Conferma password</label>
-							<input type="password" class="form-control" id="password" placeholder="Conferma password">
+							<label for="password">Conferma password</label>
+							<input type="password" class="form-control" id="confermaPassword" placeholder="Conferma password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,32}$">
 						</td>
 						<td width="10rem"></td>
 					</tr>
